@@ -25,8 +25,8 @@ import lombok.ToString;
  */
 @Entity
 @Table(name = "tbl_category")
-@Setter
-@Getter
+//@Setter
+//@Getter
 @ToString
 public class BookCategory implements Serializable {
 
