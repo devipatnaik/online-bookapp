@@ -42,4 +42,30 @@ public class BookCategory implements Serializable {
 	// List of Books
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
 	private Set<Book> book;
+
+	// getter and setter
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getCtaegoryName() {
+		return ctaegoryName;
+	}
+
+	public void setCtaegoryName(String ctaegoryName) {
+		this.ctaegoryName = ctaegoryName;
+	}
+
+	public Set<Book> getBook() {
+		return book;
+	}
+
+	public void setBook(Set<Book> book) {
+		this.book = book;
+	}
+	
 }
