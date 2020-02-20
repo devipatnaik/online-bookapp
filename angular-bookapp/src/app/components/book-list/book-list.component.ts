@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/common/book';
+import { BookService } from 'src/app/services/book.service';
 
 @Component({
   selector: 'app-book-list',
@@ -8,9 +9,11 @@ import { Book } from 'src/app/common/book';
 })
 export class BookListComponent implements OnInit {
 
-  constructor() { }
+  books: Book[];
 
-  books: Book[] = [
+  constructor(private bookService: BookService) { }
+
+  /* books: Book[] = [
     {
           sku: 'Text-100',
           name: 'C Programming Language',
@@ -44,9 +47,20 @@ export class BookListComponent implements OnInit {
           createdOn: new Date(),
           updatedOn: null,
     }
-      ];
+      ]; */
 
   ngOnInit() {
+    this.listBooks();
+  }
+
+  listBooks() {
+    this.bookService.getBooks().subscribe(
+      // Assign the data to array of books
+      data => this.books = data
+       /* data => {
+         console.log(data);
+        } */
+    );
   }
 
 }
