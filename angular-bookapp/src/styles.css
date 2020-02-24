@@ -34,3 +34,7 @@ body, html {
 .content{
     padding-bottom: 100px;
 }
+
+.checked {
+    color: orange;
+  }
