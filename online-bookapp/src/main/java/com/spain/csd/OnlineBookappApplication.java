@@ -10,5 +10,4 @@ public class OnlineBookappApplication {
 		SpringApplication.run(OnlineBookappApplication.class, args);
 		System.out.println("main called =======");
 	}
-
 }
